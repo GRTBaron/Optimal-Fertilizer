@@ -23,7 +23,7 @@ the optimal fertilizer type and amount for a given crop based on soil and climat
 """)
 st.sidebar.write("Dataset size: 900+ rows")
 st.sidebar.write("Models: Random Forest Classifier & Regressor for fertilizer type and fertilizer amount respectively.")
-st.sidebar.write("Made with: Streamlit, scikit-learn, pandas")
+st.sidebar.write("Made with: Streamlit, scikit-learn, pandas.")
 
 # User inputs
 st.subheader("Enter Soil & Climate Data")
@@ -92,6 +92,7 @@ if st.button("🔍 Predict Optimal Fertilizer"):
     ax.set_ylabel("Feature")
     ax.set_title("Feature Influence on Fertilizer Type Prediction")
     st.pyplot(fig)
+
 
 
 
