@@ -4,6 +4,36 @@ import joblib
 import pandas as pd
 import matplotlib.pyplot as plt
 
+#Custom inline CSS for theme
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #FFFFFF;
+        color: #333333;
+    }
+    /* Sidebar */
+    section[data-testid="stSidebar"] {
+        background-color: #F4E1D2 !important;
+    }
+    /* Buttons */
+    .stButton>button {
+        background-color: #228B22;
+        color: white;
+        border-radius: 8px;
+        border: none;
+        padding: 0.6em 1em;
+        font-weight: bold;
+    }
+    .stButton>button:hover {
+        background-color: #196619;
+        color: white;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Load models and encoders
 clf = joblib.load('models/fertilizer_type_model.pkl')
 reg = joblib.load('models/fertilizer_amount_model.pkl')
@@ -92,6 +122,7 @@ if st.button("🔍 Predict Optimal Fertilizer"):
     ax.set_ylabel("Feature")
     ax.set_title("Feature Influence on Fertilizer Type Prediction")
     st.pyplot(fig)
+
 
 
 
