@@ -13,7 +13,7 @@ fertilizer_encoder = joblib.load('models/fertilizer_encoder.pkl')
 # Page title and description
 st.set_page_config(page_title="🌾 Optimal Fertilizer Prediction", layout="wide")
 st.title("🌾 Optimal Fertilizer Prediction App")
-st.markdown("**Predict the best fertilizer type and application rate based on soil and weather conditions.**")
+st.markdown("Predict the best fertilizer type and application rate based on soil and weather conditions.")
 
 # Sidebar for background info
 st.sidebar.header("📌 About This Project")
@@ -21,11 +21,11 @@ st.sidebar.write("""
 This tool uses **Random Forest Machine Learning Models** to recommend 
 the optimal fertilizer type and amount for a given crop based on soil and climate data.
 """)
-st.sidebar.write("**Dataset size:** 30+ rows (demo snippet)\n**Models:** Random Forest Classifier & Regressor")
-st.sidebar.write("**Made with:** Streamlit, scikit-learn, pandas")
+st.sidebar.write("Dataset size: 900+ rows \nModels: Random Forest Classifier & Regressor")
+st.sidebar.write("Made with: Streamlit, scikit-learn, pandas")
 
 # User inputs
-st.subheader("1️⃣ Enter Soil & Climate Data")
+st.subheader("Enter Soil & Climate Data")
 col1, col2, col3 = st.columns(3)
 
 with col1:
@@ -58,9 +58,9 @@ if st.button("🔍 Predict Optimal Fertilizer"):
     pred_amount = reg.predict(features)[0]
 
     # Display predictions
-    st.subheader("2️⃣ Prediction Results")
-    st.success(f"**Recommended Fertilizer:** {pred_type} (Confidence: {confidence:.1f}%)")
-    st.success(f"**Recommended Amount:** {pred_amount:.2f} kg/ha")
+    st.subheader("Prediction Results")
+    st.success(f"Recommended Fertilizer: {pred_type} (Confidence: {confidence:.1f}%)")
+    st.success(f"Recommended Amount: {pred_amount:.2f} kg/ha")
 
     # Farming tips
     st.subheader("🌱 Farming Tip")
@@ -91,3 +91,4 @@ if st.button("🔍 Predict Optimal Fertilizer"):
     ax.set_ylabel("Feature")
     ax.set_title("Feature Influence on Fertilizer Type Prediction")
     st.pyplot(fig)
+
