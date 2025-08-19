@@ -21,7 +21,7 @@ st.sidebar.write("""
 This tool uses **Random Forest Machine Learning Models** to recommend 
 the optimal fertilizer type and amount for a given crop based on soil and climate data.
 """)
-st.sidebar.write("Dataset size: 900+ rows \nModels: Random Forest Classifier & Regressor")
+st.sidebar.write("Dataset size: 900+ rows \n Models: Random Forest Classifier & Regressor")
 st.sidebar.write("Made with: Streamlit, scikit-learn, pandas")
 
 # User inputs
@@ -91,4 +91,5 @@ if st.button("🔍 Predict Optimal Fertilizer"):
     ax.set_ylabel("Feature")
     ax.set_title("Feature Influence on Fertilizer Type Prediction")
     st.pyplot(fig)
+
 
