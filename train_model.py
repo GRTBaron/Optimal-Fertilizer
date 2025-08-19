@@ -5,9 +5,8 @@ from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 import joblib
 
 # Load dataset
-data = pd.read_csv(r"C:\Users\Aaron\PANDAS12\optimal_fertilizer_project\fertilizer data.csv")
+data = pd.read_csv(r"C:\Users\Aaron\PANDAS12\Fertilizer_Project\fertilizer data.csv")
 
-print(data.head())
 
 # Encode categorical variables: Crop and Fertilizer_Type
 crop_encoder = LabelEncoder()
@@ -44,3 +43,4 @@ joblib.dump(clf, 'models/fertilizer_type_model.pkl')
 joblib.dump(reg, 'models/fertilizer_amount_model.pkl')
 joblib.dump(crop_encoder, 'models/crop_encoder.pkl')
 joblib.dump(fertilizer_encoder, 'models/fertilizer_encoder.pkl')
+
