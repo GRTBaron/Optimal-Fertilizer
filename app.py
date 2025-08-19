@@ -8,23 +8,27 @@ import matplotlib.pyplot as plt
 st.markdown(
     """
     <style>
+    /* Main app */
     .stApp {
         background-color: #FFFFFF;
-        color: #222222;  /* Darker text */
+        color: #222222 !important;
         font-size: 16px;
     }
-    /* Sidebar */
-    section[data-testid="stSidebar"] {
-        background-color: #F4E1D2 !important;
-        color: #222222 !important;  /* Force dark text in sidebar */
+
+    /* Input labels (force dark) */
+    label, .stNumberInput label, .stSelectbox label {
+        color: #222222 !important;
+        font-weight: 600; /* make them a bit bolder */
     }
-    section[data-testid="stSidebar"] .css-1d391kg, 
-    section[data-testid="stSidebar"] .css-qrbaxs {
-        color: #222222 !important;  /* Ensure all text is readable */
+
+    /* Input text inside boxes */
+    input, select, textarea {
+        color: #222222 !important;
     }
+
     /* Buttons */
     .stButton>button {
-        background-color: #228B22 !important; /* Forest Green */
+        background-color: #228B22 !important;
         color: white !important;
         border-radius: 8px;
         border: none;
@@ -33,7 +37,7 @@ st.markdown(
         font-size: 15px;
     }
     .stButton>button:hover {
-        background-color: #196619 !important; /* Darker green */
+        background-color: #196619 !important;
         color: white !important;
     }
     </style>
@@ -128,6 +132,7 @@ if st.button("🔍 Predict Optimal Fertilizer"):
     ax.set_ylabel("Feature")
     ax.set_title("Feature Influence on Fertilizer Type Prediction")
     st.pyplot(fig)
+
 
 
 
