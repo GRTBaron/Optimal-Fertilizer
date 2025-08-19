@@ -15,15 +15,19 @@ st.markdown(
         font-size: 16px;
     }
 
-    /* Input labels (force dark) */
+    /* Input labels */
     label, .stNumberInput label, .stSelectbox label {
         color: #222222 !important;
-        font-weight: 600; /* make them a bit bolder */
+        font-weight: 600;
     }
 
-    /* Input text inside boxes */
+    /* Input boxes (number inputs, dropdowns, text fields) */
     input, select, textarea {
-        color: #222222 !important;
+        background-color: #F0FFF0 !important;  /* Honeydew light green */
+        color: #222222 !important;  /* Dark text */
+        border: 1px solid #228B22 !important;  /* Green border */
+        border-radius: 6px;
+        padding: 0.3em;
     }
 
     /* Buttons */
@@ -43,6 +47,7 @@ st.markdown(
     </style>
     """,
     unsafe_allow_html=True
+
 )
 # Load models and encoders
 clf = joblib.load('models/fertilizer_type_model.pkl')
@@ -132,6 +137,7 @@ if st.button("🔍 Predict Optimal Fertilizer"):
     ax.set_ylabel("Feature")
     ax.set_title("Feature Influence on Fertilizer Type Prediction")
     st.pyplot(fig)
+
 
 
 
